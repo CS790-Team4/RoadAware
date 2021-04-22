@@ -54,7 +54,7 @@ epochs = 10
 history = model.fit(X_train, y_train, batch_size=32, epochs=epochs, validation_data=(X_test, y_test))
 model.save("RoadAware_ML_model.h5")
 #plotting graphs for accuracy 
-#To check for accuracy 
+#To check the accuracy of the model during training 
 '''
 plt.figure(0)
 plt.plot(history.history['accuracy'], label='training accuracy')
