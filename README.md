@@ -14,3 +14,6 @@ From the above information, epochs = 10 seems to be a good number.
 
 RoadAware_ML_model.h5:
 The final trained ML model.
+
+Accuracy_TSR.py:
+This file contains the code to test the accuracy of the Machine Learning model in RoadAware_ML_model.h5. The accuracy on the model using the test data is 0.935. 
