@@ -20,3 +20,4 @@ X_test=np.array(data)
 pred = np.argmax(model.predict(X_test),axis = -1)
 #Accuracy with the test data
 print(accuracy_score(labels, pred))
+#Accuracy = 0.935
