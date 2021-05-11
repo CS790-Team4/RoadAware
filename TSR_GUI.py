@@ -229,8 +229,6 @@ class RoadAwareApp(App):
         self.screen_manager.add_widget(screen)
 
         return self.screen_manager
-    def on_stop(self):
-        Window.close()
 
 if __name__ == '__main__':
     ra_app = RoadAwareApp()
