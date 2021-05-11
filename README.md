@@ -26,7 +26,10 @@ TSR_GUI.py:
 This file contains the GUI for RoadAware application
 
 
-TO RUN:
+**TO RUN:**
+
+
+
 python 3.8 is required.
 
 Please ensure the following packages are installed
@@ -43,5 +46,12 @@ TSR_GUI.py
 
 RoadAware_ML_model.h5
 
->>>>>>>>>>>>>>>>run TSR_GUI.py
+In terminal type
+
+>>>python
+
+Followed by:
+
+>>>python TSR_GUI.py
+
 
