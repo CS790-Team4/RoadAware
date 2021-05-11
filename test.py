@@ -110,7 +110,7 @@ class UploadPage(GridLayout):
         self.pred_label = Label(text = '',size_hint_y = None, height = 30, font_size = 30)
         self.add_widget(self.pred_label)
         
-        self.filechoo = FileChooserIconView(rootpath = "/Users/snigd")
+        self.filechoo = FileChooserIconView(rootpath = "/Users")
         
         self.add_widget(self.filechoo)
         
@@ -195,13 +195,12 @@ class TakepicPage(GridLayout):
         
     
     def onCamClick(self, instance):
-        print(instance)
         print("Taking picture")
-        Clock.schedule_once(partial(self.cameraObject.export_to_png,"C:/Users/snigd/selfie.png"),0.5 )
-        im1 = PIL.Image.open("C:/Users/snigd/selfie.png")
+        Clock.schedule_once(partial(self.cameraObject.export_to_png,"/selfie.png"),0.5 )
+        im1 = PIL.Image.open("/selfie.png")
         im1 = im1.convert('RGB')
-        im1.save("C:/Users/snigd/selfie.jpg")
-        #self.cameraObject.export_to_png("C:/Users/snigd/selfie.png")
+        im1.save("/selfie.jpg")
+        #self.cameraObject.export_to_png("/selfie.png")
         
         ra_app.screen_manager.current = 'Upload'
     
