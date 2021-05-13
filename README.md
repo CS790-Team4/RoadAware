@@ -25,8 +25,7 @@ This file contains the code to test the accuracy of the Machine Learning model i
 
 This file contains the GUI for RoadAware application
 #load the model to be used for GUI-Tejasree
-#dictionary to label all traffic signs class-Tejasree
-# intial screen -Tejasree
+#dictionary to label all traffic signs class-Tejasree ,intial screen -Tejasree
 #Page when upload button is clicked -Tejasree
 
 
