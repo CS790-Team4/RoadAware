@@ -1,6 +1,7 @@
 from keras.models import load_model
 import PIL
 import numpy as np
+#load the model to be used for GUI
 model = load_model('RoadAware_ML_model.h5')
 #dictionary to label all traffic signs class.
 classes = { 1:'Speed limit (20km/h)',
@@ -59,17 +60,18 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from functools import partial
 from kivy.clock import Clock
 
-
+# intial screen
 class WelcomePage(GridLayout):
     def __init__(self,**kwargs):
         super(WelcomePage,self).__init__(**kwargs)
         
         self.cols = 1
         self.top_grid = GridLayout()
+            #Label to display 'RoadAware
         self.add_widget(Label(text = 'RoadAware',
                               font_size = 40))
         self.top_grid.cols = 1
-        
+        #Button to upload a picture
         self.upload = Button(text = "Upload a picture",
                                  background_normal = '',
                                background_color = (0.14,0.63,0.93,1),
@@ -79,7 +81,7 @@ class WelcomePage(GridLayout):
         self.top_grid.add_widget(self.upload)
         
         self.top_grid.add_widget(Label(size_hint_y = None, height = 30))
-        
+        #Button to take a picture
         self.takepic = Button(text = "Take a picture",
                                  background_normal = '',
                                background_color = (0.14,0.63,0.93,1),
@@ -89,14 +91,14 @@ class WelcomePage(GridLayout):
         self.top_grid.add_widget(self.takepic)
         
         self.add_widget(self.top_grid)
-    
+    #changes to UploadPage when upload button is clicked
     def upload_button(self,instance):
         ra_app.screen_manager.current = 'Upload'
-        
+    #changes to TakePicPage when take a picture button is clicked
     def takepic_button(self,instance):
         ra_app.screen_manager.current = 'Take_pic'
 
-
+#Page when upload button is clicked
 class UploadPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -104,18 +106,21 @@ class UploadPage(GridLayout):
         
         self.top_grid = GridLayout()
         self.top_grid.cols = 1
-
+#displays the selected image (image to classify)
         self.img = Image(source = "")
         self.add_widget(self.img)
+#Label to show the classification result
         self.pred_label = Label(text = '',size_hint_y = None, height = 30, font_size = 30)
         self.add_widget(self.pred_label)
-        
+#Filechooser helps view the files in the system (to select the image)
         self.filechoo = FileChooserIconView(rootpath = "/Users")
         
         self.add_widget(self.filechoo)
         
         #self.add_widget(Label(text = 'Upload a picture',
                              # font_size = 40))
+         #Classify button - to classify the image selected              
+          
         self.clas = Button(text = "Classify          ",
                                  background_normal = '',
                                background_color = (0.14,0.63,0.93,1),
@@ -126,6 +131,7 @@ class UploadPage(GridLayout):
         self.top_grid.add_widget(Label(size_hint_y = None, height = 30))
         
         self.filechoo.bind(selection = self.on_mouse_select)
+            #Back button to go back to the initial welcome screen
         self.back = Button(text = "Back          ",
                                  background_normal = '',
                                background_color = (0.14,0.63,0.93,1),
@@ -135,10 +141,10 @@ class UploadPage(GridLayout):
         self.top_grid.add_widget(self.back)
         
         self.add_widget(self.top_grid)
-        
+     #Changes to welcome screen when clicked   
     def back_button(self,instance):
         ra_app.screen_manager.current = 'Welcome'
-    
+    #retrieves the image from system when the image is selected by the user
     def on_mouse_select(self, obj, val):
         #print(obj)
         #print(self.filechoo.selection[0])
@@ -148,12 +154,12 @@ class UploadPage(GridLayout):
         else:
             self.img.source = ''
         return
-    
+    #To display the image selected by the user on screen
     def on_touch_up(self,touch):
         if self.filechoo.selection:
             self.img.source = str(self.filechoo.selection[0])
         return super().on_touch_up(touch)
-    
+    #Uses the loaded ml model to predict on the image selected by the user
     def on_classify(self,instance):
         try:
             file_path = self.img.source
@@ -164,17 +170,17 @@ class UploadPage(GridLayout):
         #index = np.argmax(model.predict(image), axis=-1)
             predic = model.predict([image])
             pred = int(np.argmax(predic, axis=-1))
-            if(predic[0][pred]<1):
+            if(predic[0][pred]<1):  #if unable to classify 
                 sign = 'This is not a road sign or the picture is too distorted'
             else:
                 sign = classes[pred+1]
             print(sign)
             
-        except:
+        except: #ml model only takes .jpg files as input 
             sign = "Please choose .jpg file"
         self.pred_label.text = sign
 
-
+#Page when take a pic button is clicked
 class TakepicPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -182,9 +188,11 @@ class TakepicPage(GridLayout):
         self.cols = 1
         #self.add_widget(Label(text = 'Take a picture',
                               #font_size = 40))
+        #To access the camera 
         self.cameraObject = Camera(play = False)
         self.cameraObject.play = True
         self.cameraObject.resolution = (600,600)
+        #Button to take a picture
         self.cameraClick = Button(text = "Take Photo")
         self.cameraClick.size_hint = (0.5,0.2)
         self.cameraClick.pos_hint = {'x':0.25,'y':0.75}
@@ -193,7 +201,8 @@ class TakepicPage(GridLayout):
         self.add_widget(self.cameraClick)
         
         
-    
+    #Captures the picture and saves it as a .png file when take photo button is clicked and converts it to .jpg image
+    #changes the screen to upload image screen where user can access the photo they took to classify it
     def onCamClick(self, instance):
         print("Taking picture")
         Clock.schedule_once(partial(self.cameraObject.export_to_png,"/selfie.png"),0.5 )
@@ -204,7 +213,7 @@ class TakepicPage(GridLayout):
         
         ra_app.screen_manager.current = 'Upload'
     
-
+#main class with screen manager to help navigate between pages 
 class RoadAwareApp(App):
     def build(self):
         self.screen_manager = ScreenManager()
@@ -229,7 +238,7 @@ class RoadAwareApp(App):
         self.screen_manager.add_widget(screen)
 
         return self.screen_manager
-
+#creating instance of RoadAware to run the application
 if __name__ == '__main__':
     ra_app = RoadAwareApp()
     ra_app.run()
