@@ -1,9 +1,9 @@
 from keras.models import load_model
 import PIL
 import numpy as np
-#load the model to be used for GUI
+#load the model to be used for GUI-Tejasree
 model = load_model('RoadAware_ML_model.h5')
-#dictionary to label all traffic signs class.
+#dictionary to label all traffic signs class-Tejasree
 classes = { 1:'Speed limit (20km/h)',
             2:'Speed limit (30km/h)', 
             3:'Speed limit (50km/h)', 
@@ -60,7 +60,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from functools import partial
 from kivy.clock import Clock
 
-# intial screen
+# intial screen -Tejasree
 class WelcomePage(GridLayout):
     def __init__(self,**kwargs):
         super(WelcomePage,self).__init__(**kwargs)
@@ -98,7 +98,7 @@ class WelcomePage(GridLayout):
     def takepic_button(self,instance):
         ra_app.screen_manager.current = 'Take_pic'
 
-#Page when upload button is clicked
+#Page when upload button is clicked -Tejasree
 class UploadPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
