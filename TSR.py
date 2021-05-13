@@ -9,6 +9,9 @@ from keras.layers import Conv2D, MaxPool2D, Dense, Flatten, Dropout
 data = []
 labels = []
 classes = 43
+# Preprocessing the data - Snigdha
+#
+#
 cur_path = os.getcwd()
 #Retrieving the images and their labels 
 for i in range(classes):
@@ -34,6 +37,11 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 #Converting the labels into one hot encoding
 y_train = to_categorical(y_train, 43)
 y_test = to_categorical(y_test, 43)
+#
+#
+#
+
+
 #Building the model
 model = Sequential()
 model.add(Conv2D(filters=128, kernel_size=(5,5), activation='relu', input_shape=X_train.shape[1:]))
@@ -47,7 +55,12 @@ model.add(Dropout(rate=0.25))
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(43, activation='softmax'))
-#Compilation of the model
+
+
+#Compilation of the model/training the model - Snigdha
+#
+#
+#
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 #changed epochs from 15 to 10 
 epochs = 10
@@ -73,5 +86,9 @@ plt.ylabel('loss')
 plt.legend()
 plt.show()
 '''
+#
+#
+#
+#
 
 
