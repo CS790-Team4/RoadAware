@@ -1,6 +1,10 @@
 from keras.models import load_model
 import PIL
 import numpy as np
+#Loading the ml model for GUI - Snigdha
+#
+#
+#
 model = load_model('RoadAware_ML_model.h5')
 #dictionary to label all traffic signs class.
 classes = { 1:'Speed limit (20km/h)',
@@ -46,6 +50,10 @@ classes = { 1:'Speed limit (20km/h)',
             41:'Roundabout mandatory', 
             42:'End of no passing', 
             43:'End no passing vehincle > 3.5 tons' }
+#
+#
+#
+#
 
 from kivy.uix.camera import Camera
 from kivy.uix.image import Image
