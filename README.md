@@ -1,5 +1,9 @@
 # RoadAware Application
-##### README - Snigdha
+##### README done by - Snigdha
+###### TRS.py - Pre-processing the data and Compiling and training the ml model (images of the epochs, training loss and outputs) - Snigdha
+###### TRS-GUI.py - loading the model and defining the labels dictionary - Snigdha
+
+
 **KAGGLE-DATASET:**
 This repository consists of dataset downloaded from Kaggle. Due to its large size, only a small portion of the training dataset has been uploaded.
 Link to the Kaggle dataset: https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign
