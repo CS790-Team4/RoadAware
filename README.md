@@ -1,5 +1,11 @@
 # RoadAware Application
-# Deepthi Gorantla
+
+**TSR_GUI.py:** # Done by Deepthi Gorantla
+This file contains the GUI for RoadAware application
+# At start Front end has been developed using Tkinter libraries in python but later on I have choosen Kivy over Tkinter as it contains the features to develop GUI for mobile applications. - Deepthi
+# Developed Graphical User Interface using Kivy -  Deepthi
+# Performed Unit testing for the developed User Interface and then handover my part to the another team members for the review and further system level testing. - Deepthi
+
 **KAGGLE-DATASET:**
 This repository consists of dataset downloaded from Kaggle. Due to its large size, only a small portion of the training dataset has been uploaded.
 Link to the Kaggle dataset: https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign
