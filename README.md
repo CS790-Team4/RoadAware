@@ -2,9 +2,9 @@
 
 # README done by Manivakul 
 
-# Accuracy_TSR.py - Tested the CNN model using the test dataset, which resulted in 93.5% of accuracy. 
+#Accuracy_TSR.py - Tested the CNN model using the test dataset, which resulted in 93.5% of accuracy. 
 
-# TSR.py - Metrics for training the model
+#TSR.py - Metrics for training the model
 
 **KAGGLE-DATASET:**
 This repository consists of dataset downloaded from Kaggle. Due to its large size, only a small portion of the training dataset has been uploaded.
