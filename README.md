@@ -1,11 +1,13 @@
-# RoadAware Application
-
-**TSR_GUI.py:** # Done by Deepthi Gorantla
+# README done by - Deepthi Gorantla
+**TSR_GUI.py:** 
 This file contains the GUI for RoadAware application
-# At start Front end has been developed using Tkinter libraries in python but later on I have choosen Kivy over Tkinter as it contains the features to develop GUI for mobile applications. - Deepthi
-# Developed Graphical User Interface using Kivy -  Deepthi
-# Performed Unit testing for the developed User Interface and then handover my part to the another team members for the review and further system level testing. - Deepthi
+# At start Front end has been developed using Tkinter libraries in python but later on I have choosen Kivy over Tkinter as it contains the features to develop GUI for mobile applications. - Deepthi Gorantla
+# Developed Graphical User Interface using Kivy -  Deepthi Gorantla
+# Performed Unit testing for the developed User Interface and then handover my part to the another team members for the review and further system level testing. - Deepthi Gorantla
 
+**TRS.py:** - Pre-processing the data and compiling - Deepthi Gorantla
+
+# RoadAware Application
 **KAGGLE-DATASET:**
 This repository consists of dataset downloaded from Kaggle. Due to its large size, only a small portion of the training dataset has been uploaded.
 Link to the Kaggle dataset: https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign
@@ -28,9 +30,7 @@ The final trained ML model.
 This file contains the code to test the accuracy of the Machine Learning model in RoadAware_ML_model.h5. The accuracy on the model using the test data is 0.935. 
 
 **TSR_GUI.py:**
-# At start Front end has been developed using Tkinter libraries in python but later on I have choosen Kivy over Tkinter as it contains the features to develop GUI for mobile applications. - Deepthi
-# Developed Graphical User Interface using Kivy -  Deepthi
-# Performed Unit testing for the developed User Interface and then handover my part to the another team members for the review and further system level testing. - Deepthi
+
 This file contains the GUI for RoadAware application
 
 
