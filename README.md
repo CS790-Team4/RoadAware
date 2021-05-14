@@ -4,7 +4,7 @@
 
 # Accuracy_TSR.py - Tested all the features and checked the accuracy of the CNN modle from the backend which resulted in 91.11% of accuracy. 
 
-#RoadAware_ML_model.h5 - Developed CNN model using python, which can work efficiently with the testing data over the trained dataset. And it also outputs the accurated results.
+# RoadAware_ML_model.h5 - Developed CNN model using python, which can work efficiently with the testing data over the trained dataset. And it also outputs the accurated results.
 
 
 **KAGGLE-DATASET:**
