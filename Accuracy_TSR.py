@@ -2,7 +2,7 @@ import pandas as pd
 from PIL import Image
 import numpy as np 
 from keras.models import load_model
-#testing accuracy on test dataset
+#testing accuracy on test dataset - Satvik
 from sklearn.metrics import accuracy_score
 #load the ML model
 model = load_model('RoadAware_ML_model.h5')
