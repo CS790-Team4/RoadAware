@@ -47,7 +47,7 @@ model.add(Dropout(rate=0.25))
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(43, activation='softmax'))
-#Compilation of the model
+#Trainig the model using different optimizers, metrics and loss functions - Manivakul 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 #changed epochs from 15 to 10 
 epochs = 10
