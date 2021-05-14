@@ -35,7 +35,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 y_train = to_categorical(y_train, 43)
 y_test = to_categorical(y_test, 43)
 #Building the model
-#Building the model - Satvik
+#Working with the model - Satvik
 model = Sequential()
 model.add(Conv2D(filters=128, kernel_size=(5,5), activation='relu', input_shape=X_train.shape[1:]))
 model.add(Conv2D(filters=128, kernel_size=(5,5), activation='relu'))
