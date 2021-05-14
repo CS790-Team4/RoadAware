@@ -91,15 +91,15 @@ class WelcomePage(GridLayout):
         self.top_grid.add_widget(self.takepic)
         
         self.add_widget(self.top_grid)
-    #changes to UploadPage when upload button is clicked
+    #changes to UploadPage when upload button is clicked - Deepthi
     def upload_button(self,instance):
         ra_app.screen_manager.current = 'Upload'
-    #changes to TakePicPage when take a picture button is clicked
+    #changes to TakePicPage when take a picture button is clicked - Deepthi
     def takepic_button(self,instance):
         ra_app.screen_manager.current = 'Take_pic'
 
 #Page when upload button is clicked
-# Developed a Upload Image functionality to give testing input to the RoadAware system so that it can be classified against training data. - Deepthi
+# Developed a Upload Image functionality to give testing input to the RoadAware system - Deepthi
 class UploadPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -181,7 +181,7 @@ class UploadPage(GridLayout):
             sign = "Please choose .jpg file"
         self.pred_label.text = sign
 
-#Page when take a pic button is clicked
+#Page when take a pic button is clicked - Deepthi
 class TakepicPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -214,7 +214,7 @@ class TakepicPage(GridLayout):
         
         ra_app.screen_manager.current = 'Upload'
     
-#main class with screen manager to help navigate between pages 
+#main class with screen manager to help navigate between pages - Deepthi
 class RoadAwareApp(App):
     def build(self):
         self.screen_manager = ScreenManager()
