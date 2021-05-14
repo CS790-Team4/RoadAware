@@ -24,7 +24,7 @@ for i in range(classes):
             labels.append(i)
         except:
             print("Error loading image")
-#Converting lists into numpy arrays
+#Converting lists into numpy arrays - Deepthi
 data = np.array(data)
 labels = np.array(labels)
 print(data.shape, labels.shape)
