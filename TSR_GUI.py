@@ -142,10 +142,10 @@ class UploadPage(GridLayout):
         self.top_grid.add_widget(self.back)
         
         self.add_widget(self.top_grid)
-     #Changes to welcome screen when clicked   
+     #Changes to welcome screen when clicked   - Deepthi
     def back_button(self,instance):
         ra_app.screen_manager.current = 'Welcome'
-    #retrieves the image from system when the image is selected by the user
+    #retrieves the image from system when the image is selected by the user - Deepthi
     def on_mouse_select(self, obj, val):
         #print(obj)
         #print(self.filechoo.selection[0])
