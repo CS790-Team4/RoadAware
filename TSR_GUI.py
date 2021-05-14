@@ -99,6 +99,7 @@ class WelcomePage(GridLayout):
         ra_app.screen_manager.current = 'Take_pic'
 
 #Page when upload button is clicked
+# Developed a Upload Image functionality to give testing input to the RoadAware system so that it can be classified against training data. - Deepthi
 class UploadPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
