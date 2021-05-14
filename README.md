@@ -1,6 +1,8 @@
 # RoadAware Application
 # README done by Satvik
+
 #Accuracy_TSR.py - Tested the CNN model with the test dataset and achieved an accuracy of 93.5%
+#TRS.py - Worked on building the neural network architecture
 
 **KAGGLE-DATASET:**
 This repository consists of dataset downloaded from Kaggle. Due to its large size, only a small portion of the training dataset has been uploaded.
